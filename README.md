@@ -2,17 +2,20 @@
 
 ## Environmental Compliance Analysis
 
-Statistical analysis of drinking-water system violations across 9 counties in Pennsylvania. The project demonstrates end-to-end data analysis: cleaning, EDA, hypothesis testing, statistical modeling, and actionable insights.
+This project analyzes drinking-water system violations in Pennsylvania and presents a full analytics workflow: data cleaning, exploratory analysis, statistical testing, interpretable modeling, and communication of results.
 
-**Key Finding:** Population size drives violation rates, not system type. Small systems appear riskier due to statistical effects, not necessarily worse compliance.
+**Project framing:** This notebook demonstrates data cleaning, statistical testing, modeling, and plain-language communication in a public-sector data context.
 
-**Methods:** Kruskal-Wallis test, Spearman correlation, Negative-Binomial GLM with population offset.
+**Core finding:** Population size explains much more of the observed violation-rate pattern than system type. Small systems often look riskier because per-capita rates become unstable when the served population is very small.
 
-**Deliverable:** System-level risk flags and county-level exposure-weighted metrics for inspection prioritization.
+**Methods used:** Exploratory data analysis, Kruskal-Wallis testing, Spearman correlation, Negative-Binomial GLM with population offset, and a small-sample logistic regression workflow with Leave-One-Out cross-validation.
+
+**Scope of the data:** The notebook works with 9 systems that have complete system-level fields and 6 counties with sufficient data for the county-level modeling section.
 
 ---
 
-## Setup
+## Open The Project
+
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
@@ -20,4 +23,4 @@ pip install -r Environmental_Compliance_Analysis/requirements.txt
 jupyter notebook Environmental_Compliance_Analysis/Dwv.ipynb
 ```
 
-See `Environmental_Compliance_Analysis/README_UPDATED.md` for details.
+For project-specific context, see `Environmental_Compliance_Analysis/README.md`.
